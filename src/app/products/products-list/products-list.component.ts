@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
-import {Product} from "../types/products.types";
+import {Product} from "../../types/products.types";
 import {Subscription} from "rxjs";
 import {ProductsService} from "../../api-integration/products.service";
 import {setAllProducts} from "../../state-management/actions/products/product.actions";

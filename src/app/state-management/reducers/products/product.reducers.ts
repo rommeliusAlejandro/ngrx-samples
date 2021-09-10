@@ -1,4 +1,4 @@
-import {Product} from "../../../products/types/products.types";
+import {Product} from "../../../types/products.types";
 import {createReducer, on} from "@ngrx/store";
 import {addProduct, setAllProducts, removeProduct} from "../../actions/products/product.actions";
 import {createEntityAdapter, EntityAdapter} from "@ngrx/entity";

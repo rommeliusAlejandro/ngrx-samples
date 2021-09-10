@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {InMemoryDbService} from "angular-in-memory-web-api";
-import {Product} from "../products/types/products.types";
+import {Product} from "../types/products.types";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,17 @@ export class DataService implements InMemoryDbService {
       users: [
         {
           id: '1',
-          name: 'Rommel'
+          firstName: 'Rommel',
+          lastName: 'Loayza',
+          email: 'rommel.loayza@dharbor.com',
+          password: 'Password1!'
+        },
+        {
+          id: '2',
+          firstName: 'Homer',
+          lastName: 'Simpson',
+          email: 'homer.simpson@dharbor.com',
+          password: 'Password1!'
         }
       ]
     };

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Product} from "../products/types/products.types";
+import {Product} from "../types/products.types";
+import {ApiHttpClient} from "./api.http.client";
 
 @Injectable({
   providedIn: 'root'
@@ -9,18 +10,18 @@ import {Product} from "../products/types/products.types";
 export class ProductsService {
 
   constructor(
-    private readonly httpClient: HttpClient
+    private readonly apiHttpClient: ApiHttpClient
   ) { }
 
   getProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('api/products');
+    return this.apiHttpClient.get<Product[]>('api/products');
   }
 
   saveProduct(newProduct: Product): Observable<Product> {
-    return this.httpClient.post<Product>('api/products', newProduct);
+    return this.apiHttpClient.post<Product>('api/products', newProduct);
   }
 
   deleteProduct(productId: string): Observable<Product> {
-    return this.httpClient.delete<Product>(`api/products/${productId}`);
+    return this.apiHttpClient.delete<Product>(`api/products/${productId}`);
   }
 }

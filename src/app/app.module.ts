@@ -9,6 +9,7 @@ import {ProductsModule} from "./products/products.module";
 import {ApiIntegrationModule} from "./api-integration/api-integration.module";
 import {StateManagementModule} from "./state-management/state-management.module";
 import {AnalyticsModule} from "./analytics/analytics.module";
+import {LoginModule} from "./login/login.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AnalyticsModule} from "./analytics/analytics.module";
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
     ApiIntegrationModule,
-    AnalyticsModule
+    AnalyticsModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
