@@ -1,6 +1,6 @@
 import {Product} from "../../../products/types/products.types";
 import {createReducer, on} from "@ngrx/store";
-import {addProduct, getAllProducts, removeProduct} from "../../actions/products/product.actions";
+import {addProduct, setAllProducts, removeProduct} from "../../actions/products/product.actions";
 import {createEntityAdapter, EntityAdapter} from "@ngrx/entity";
 
 const selectId = (product: Product): string => product.id;
@@ -12,7 +12,7 @@ export const productEntityAdapter: EntityAdapter<Product> = createEntityAdapter<
 
 export const productsReducer = createReducer(
   productEntityAdapter.getInitialState(),
-  on(getAllProducts, (state, actionPayload) => {
+  on(setAllProducts, (state, actionPayload) => {
     return productEntityAdapter.setAll(actionPayload.payload, state)
   }),
   on(addProduct, (state, actionPayload) => productEntityAdapter.addOne(actionPayload.payload, state)),

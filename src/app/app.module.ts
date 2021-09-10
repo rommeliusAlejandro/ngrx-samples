@@ -8,6 +8,7 @@ import {DataService} from "./db/data.service";
 import {ProductsModule} from "./products/products.module";
 import {ApiIntegrationModule} from "./api-integration/api-integration.module";
 import {StateManagementModule} from "./state-management/state-management.module";
+import {AnalyticsModule} from "./analytics/analytics.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {StateManagementModule} from "./state-management/state-management.module"
     BrowserModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(DataService),
-    ApiIntegrationModule
+    ApiIntegrationModule,
+    AnalyticsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

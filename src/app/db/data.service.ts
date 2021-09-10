@@ -19,6 +19,12 @@ export class DataService implements InMemoryDbService {
           sku: 'a-b-c',
           price: 10.5
         }
+      ],
+      users: [
+        {
+          id: '1',
+          name: 'Rommel'
+        }
       ]
     };
   }

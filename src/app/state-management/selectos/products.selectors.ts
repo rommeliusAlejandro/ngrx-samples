@@ -16,3 +16,17 @@ export const selectAllProducts = createSelector(
   selectProductState,
   selectAll
 )
+
+export const selectProductById = (productId: string) => {
+  return createSelector(
+    selectAllProducts,
+    (products: Product[]): Product|null => {
+      const prod = products.find(product => product.id === productId);
+      if(prod) {
+        return prod;
+      }
+
+      return null;
+    }
+  )
+}

@@ -8,6 +8,9 @@ import { ProductsReportComponent } from './products-report/products-report.compo
   declarations: [
     ProductsReportComponent
   ],
+  exports: [
+    ProductsReportComponent
+  ],
   imports: [
     CommonModule
   ]

@@ -3,7 +3,7 @@ import {Store} from "@ngrx/store";
 import {Product} from "../types/products.types";
 import {Subscription} from "rxjs";
 import {ProductsService} from "../../api-integration/products.service";
-import {getAllProducts} from "../../state-management/actions/products/product.actions";
+import {setAllProducts} from "../../state-management/actions/products/product.actions";
 import {selectAllProducts, selectProducts} from "../../state-management/selectos/products.selectors";
 import {filter, map} from "rxjs/operators";
 
@@ -25,7 +25,7 @@ export class ProductsListComponent implements OnInit, OnDestroy {
 
     this.productsService.getProducts().subscribe(
       next => {
-        this.store.dispatch(getAllProducts({payload: next}))
+        this.store.dispatch(setAllProducts({payload: next}))
       }
     )
 

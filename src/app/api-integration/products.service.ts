@@ -16,8 +16,8 @@ export class ProductsService {
     return this.httpClient.get<Product[]>('api/products');
   }
 
-  saveProduct(newProduct: Product): Observable<Product[]> {
-    return this.httpClient.post<Product[]>('api/products', newProduct);
+  saveProduct(newProduct: Product): Observable<Product> {
+    return this.httpClient.post<Product>('api/products', newProduct);
   }
 
   deleteProduct(productId: string): Observable<Product> {

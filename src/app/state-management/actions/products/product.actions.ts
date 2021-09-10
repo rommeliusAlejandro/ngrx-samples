@@ -11,7 +11,7 @@ export const removeProduct = createAction(
   props<ActionPayload<string>>()
 );
 
-export const getAllProducts = createAction(
+export const setAllProducts = createAction(
   '[Products] Get all products',
   props<ActionPayload<Product[]>>()
 );
